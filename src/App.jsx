@@ -3,13 +3,12 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Home from './Pages/Home';
 import Bollywood from './Pages/Bollywood';
-import OldBollywood from './Pages/OldBollywood';
+import OldBollywood from './Pages/OldBollywood' // ✅ correct case
 import Login from './Pages/Login';
 import Signup from './Pages/Signup_TEMP';
 import Dashboard from './Pages/Dashboard';
 import Search from './Pages/Search';
-import Watchlist from './Pages/Watchlist';
-
+import Watchlist from './Pages/Watchlist'; // Import Watchlist page
 
 function App() {
   return (

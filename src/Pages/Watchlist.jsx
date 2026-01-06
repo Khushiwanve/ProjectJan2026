@@ -1,6 +1,7 @@
 // src/pages/Watchlist.jsx
 import React, { useState, useEffect } from 'react';
-import MovieCard from '../components/MovieCard';
+import MovieCard from '../Components/MovieCard';
+
 
 const Watchlist = () => {
   // State to store the movies in the watchlist
