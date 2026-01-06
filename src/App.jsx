@@ -5,7 +5,7 @@ import Home from './Pages/Home';
 import Bollywood from './Pages/Bollywood';
 import OldBollywood from './Pages/OldBollywood';
 import Login from './Pages/Login';
-import Signup from './Pages/Signup';
+import Signup from './Pages/Signup_TEMP';
 import Dashboard from './Pages/Dashboard';
 import Search from './Pages/Search';
 import Watchlist from './Pages/Watchlist';
