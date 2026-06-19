@@ -1,0 +1,175 @@
+.cine-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0a0a0a;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.cine-nav.is-scrolled {
+  background: rgba(10, 10, 10, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom-color: rgba(229, 9, 20, 0.25);
+}
+
+.cine-nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 64px;
+  padding-inline: clamp(16px, 4vw, 40px);
+}
+
+.cine-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem;
+  color: #e50914;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.brand-accent { color: #fff; }
+
+.cine-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  justify-content: center;
+}
+.cine-links--desktop { display: flex; }
+
+.cine-link {
+  color: #ccc;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+  position: relative;
+}
+.cine-link:hover { color: #fff; background: rgba(255, 255, 255, 0.07); }
+.cine-link.active { color: #e50914; }
+.cine-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  background: #e50914;
+  border-radius: 2px;
+}
+
+.cine-auth { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.cine-auth--desktop { display: flex; }
+
+.btn-login {
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.btn-login:hover { background: rgba(255, 255, 255, 0.08); }
+
+.btn-signup {
+  background: #e50914;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-signup:hover { background: #c1070f; transform: translateY(-1px); }
+
+.btn-logout {
+  background: transparent;
+  border: 1px solid rgba(229, 9, 20, 0.5);
+  color: #e50914;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-logout:hover { background: #e50914; color: #fff; }
+
+.user-pill { color: #aaa; font-size: 0.85rem; }
+.user-pill strong { color: #fff; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  flex-shrink: 0;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.hamburger span.open:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger span.open:nth-child(2) { opacity: 0; }
+.hamburger span.open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.cine-mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  background: rgba(10, 10, 10, 0.99);
+  border-bottom: 1px solid transparent;
+  transition: max-height 0.3s ease, border-color 0.3s ease;
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .cine-links--desktop,
+  .cine-auth--desktop { display: none; }
+  .hamburger { display: flex; }
+  .cine-mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-inline: 16px;
+  }
+  .cine-mobile-menu.open {
+    max-height: 70vh;
+    overflow-y: auto;
+    border-bottom-color: rgba(229, 9, 20, 0.25);
+    padding-block: 12px 18px;
+  }
+  .cine-mobile-menu .cine-link { padding: 13px 14px; }
+  .cine-mobile-auth {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 8px;
+    padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .cine-mobile-auth .btn-login,
+  .cine-mobile-auth .btn-signup,
+  .cine-mobile-auth .btn-logout {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .cine-brand { font-size: 1.4rem; }
+  .cine-nav-inner { height: 58px; }
+}
